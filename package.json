@@ -1,0 +1,21 @@
+{
+  "name": "bee-productivity-analyzer",
+  "version": "1.0.0",
+  "description": "Bee foraging and productivity analysis system",
+  "main": "app/static/js/App.jsx",
+  "scripts": {
+    "start": "python app/main.py",
+    "build": "babel app/static/js -d app/static/dist"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "recharts": "^2.1.8",
+    "lucide-react": "^0.263.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-react": "^7.14.5"
+  }
+}
