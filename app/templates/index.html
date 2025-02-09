@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee Productivity Analyzer</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Socket.IO client -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    
+    <!-- React and ReactDOM -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    
+    <!-- Recharts for visualizations -->
+    <script src="https://unpkg.com/recharts/umd/Recharts.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div id="root"></div>
+
+    <script>
+        // Initialize Socket.IO connection
+        const socket = io({
+            auth: {
+                token: localStorage.getItem('token')
+            }
+        });
+
+        // Store socket instance globally
+        window.socket = socket;
+
+        // Generate a temporary user ID (in production, this would come from authentication)
+        window.userId = 'user_' + Math.random().toString(36).substr(2, 9);
+
+        // Socket connection handlers
+        socket.on('connect', () => {
+            console.log('Connected to server');
+        });
+
+        socket.on('error', (error) => {
+            console.error('Socket error:', error);
+        });
+    </script>
+
+    <!-- Mount React application -->
+    <script>
+        const container = document.getElementById('root');
+        ReactDOM.render(React.createElement(BeekeepingAnalyzer), container);
+    </script>
+</body>
+</html>
