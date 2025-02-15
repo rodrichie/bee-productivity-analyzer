@@ -4,6 +4,8 @@ import os
 from dotenv import load_dotenv
 from .handlers.socket_events import register_socket_events
 from .controllers.analysis_controller import AnalysisController
+
+
 import logging
 
 # Load environment variables
@@ -24,7 +26,7 @@ socketio = SocketIO(app, cors_allowed_origins="*", ping_timeout=120, ping_interv
 analysis_controller = AnalysisController()
 
 # Register socket events
-register_socket_events(socketio, analysis_controller)
+register_socket_events(socketio)
 
 @app.route('/')
 def index():
