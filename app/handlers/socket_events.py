@@ -4,6 +4,7 @@ import logging
 import json
 from typing import Dict, Any
 import os
+from datetime import datetime
 
 from app.models import bee_classifier, gemini_handler
 from app.models.media_analyzer import MediaAnalyzer
@@ -211,14 +212,11 @@ def register_socket_events(socketio):
                 'type': 'AnalysisError'
             })
 
-    @socketio.on('disconnect')
-    def handle_disconnect():
-        """Handle client disconnections"""
-        connection_id = request.sid
-        user_id = connection_to_user.get(connection_id)
-        
-        # Clean up session data
-        if user_id:
+        @socketio.on('disconnect')
+        def handle_disconnect(*args):
+            connection_id = request.sid
+            user_id = connection_to_user.get(connection_id)
+            
             if user_id in user_sessions:
                 del user_sessions[user_id]
             if connection_id in connection_to_user:
