@@ -2,9 +2,10 @@ from flask import jsonify
 from typing import Dict, Any, Optional
 from datetime import datetime
 import logging
-from ..services.data_integration_service import DataIntegrationService
+from ..services.data_intergration_service import DataIntegrationService
 from ..utils.error_middleware import handle_errors
 from ..utils.session_manager import session_manager
+from typing import Dict, Any, List, Optional
 
 logger = logging.getLogger(__name__)
 
