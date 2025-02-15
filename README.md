@@ -167,5 +167,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-Group BSE-26- <nabasarodrick@gmail.com>
+Group BSE-26- 
+Nabasa Rodrick <nabasarodrick@gmail.com> 
+Aheebwa Stephen 
+Kukunda Lynn
+Twebaze Laura Lorna
 Project Link: <https://github.com/rodrichie/bee-productivity-analyzer>
