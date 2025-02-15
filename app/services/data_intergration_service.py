@@ -1,6 +1,7 @@
 from typing import Dict, Any, List, Optional
-from datetime import datetime
+from datetime import datetime, timedelta
 import logging
+import numpy as np
 from ..models.trend_analyzer import BeeTrendAnalyzer
 from ..models.analysis_metrics import BeeActivityAnalyzer
 from ..models.knowledge_base import knowledge_base
@@ -203,7 +204,7 @@ class DataIntegrationService:
                 },
                 'trend_analysis': trend_analysis,
                 'insights': insights,
-                'recommendations': self._generate_historical_recommendations(trend_analysis, insights)
+                'recommendations': self._generate_historical_recommendations(trend_analysis)
             }
 
         except Exception as e:
@@ -376,9 +377,7 @@ class DataIntegrationService:
 
         return insights
 
-    def _generate_historical_recommendations(self, 
-                                          trend_analysis: Dict[str, Any],
-                                          insights: List[str]) -> List[str]:
+    def _generate_historical_recommendations(self, trend_analysis: Dict[str, Any]) -> List[str]:
         """Generate recommendations based on historical analysis"""
         recommendations = []
 
