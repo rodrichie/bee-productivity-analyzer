@@ -63,6 +63,18 @@ A real-time bee productivity and foraging analysis system using AI to help beeke
 
    Replace `your_gemini_api_key` with your actual Gemini API key.
 
+## Building the Front-End Bundle
+
+Before running the Flask server, you need to build the React application. The build process uses Babel with your `.babelrc` configuration.
+
+Run the following command from the project root:
+
+```bash
+npm run build
+```
+
+This command will transpile the files under `js` and output the bundled JavaScript file into `dist` (e.g., `App.js`).
+
 ## Running the Application
 
 1. **Start the Flask Server**
@@ -155,5 +167,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-Your Name - <your.email@example.com>
-Project Link: <https://github.com/yourusername/bee-productivity-analyzer>
+Group BSE-26- <nabasarodrick@gmail.com>
+Project Link: <https://github.com/rodrichie/bee-productivity-analyzer>
